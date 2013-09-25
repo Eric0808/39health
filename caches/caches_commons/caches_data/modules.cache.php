@@ -506,5 +506,19 @@ return array (
     'installdate' => '2011-09-02',
     'updatedate' => '2011-09-02',
   ),
+  'zsask' => 
+  array (
+    'module' => 'zsask',
+    'name' => '问答模块',
+    'url' => '',
+    'iscore' => '0',
+    'version' => '1.0',
+    'description' => '',
+    'setting' => ' ',
+    'listorder' => '0',
+    'disabled' => '0',
+    'installdate' => '2012-08-15',
+    'updatedate' => '2012-08-17',
+  ),
 );
 ?>

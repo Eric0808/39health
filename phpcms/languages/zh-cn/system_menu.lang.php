@@ -454,4 +454,9 @@ $LANG['complete_info'] = '填写资料';
 $LANG['clear_data'] = '一键清理';
 $LANG['player_manage'] = '播放器管理';
 $LANG['video_upload'] = '视频上传'; 
+$LANG['zsask'] = '问答模块';
+$LANG['check_question'] = '审核';
+$LANG['cat_list'] = '管理栏目';
+$LANG['add_cat'] = '添加栏目';
+$LANG['ask_settings'] = '问答配置';
 ?>
