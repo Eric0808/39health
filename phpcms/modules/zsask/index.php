@@ -90,7 +90,6 @@ class index {
 				$_userid = $this->userid;
 				if ($_userid == $info['userid'] && $_userid) showmessage('您不可以回答自己的问题！');
 				//if ($this->IP == $info['ip'] && !$this->admin) showmessage('您不可以回答自己的问题！');
-				
 				foreach ($ts_answer as $an) {
 					$_u[] = $an['userid'];
 					$_p[] = $an['ip'];
