@@ -1,0 +1,48 @@
+.box_f {
+overflow: hidden;
+zoom: 1;
+}
+.box_f ul.phbang {
+border-bottom: 2px solid #c30d23;
+overflow: hidden;
+zoom: 1;
+margin-top: 10px;
+}
+ul, li {
+margin: 0;
+padding: 0;
+border: 0;
+list-style: none;
+}
+.box_f ul.phbang li {
+float: left;
+font-size: 12px;
+margin-right: 5px;
+}
+.box_f ul.phbang li a {
+display: block;
+float: left;
+padding: 5px 20px 5px 15px;
+background: url(../../images/newstyle/ico_37.gif) no-repeat scroll 95% center;
+border: #dddddd solid 1px;
+}
+.cp01zs {
+overflow: hidden;
+zoom: 1;
+font-size: 12px;
+line-height: 180%;
+}
+.cp01zs li {
+float: left;
+width: 152px;
+border: 1px solid #cccccc;
+margin-top: 15px;
+margin-left: 20px;
+padding: 6px;
+display: inline;
+margin-right: 4px;
+}
+img {
+border: 0;
+}
+

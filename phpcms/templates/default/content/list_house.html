@@ -1,0 +1,109 @@
+{template "content","header_info"}
+<link href="{CSS_PATH}newstyle/product_list.css" rel="stylesheet" type="text/css" />
+<div class="wp">
+	<div id="search-data">
+    	 <dl class="searchitem">
+			<dt class="blue"><span>生肖：</span>
+			{loop filters('zodiac',$modelid) $r}
+				{$r[menu]}
+			{/loop}
+			</dt>
+        </dl>
+		<dl class="searchitem">
+			<dt class="blue"><span>型号：</span>
+			{loop filters('model',$modelid) $r}
+				{$r[menu]}
+			{/loop}
+			</dt>
+        </dl>
+		<dl class="searchitem">
+			<dt class="blue"><span>用途：</span>
+			{loop filters('using',$modelid) $r}
+				{$r[menu]}
+			{/loop}
+			</dt>
+        </dl>
+		<dl class="searchitem">
+			<dt class="blue"><span>材质：</span>
+			{loop filters('material',$modelid) $r}
+				{$r[menu]}
+			{/loop}
+			</dt>
+        </dl>
+		<dl class="searchitem">
+			<dt class="blue"><span>功用：</span>
+			{loop filters('effect',$modelid) $r}
+				{$r[menu]}
+			{/loop}
+			</dt>
+        </dl>
+        <dl class="searchitem">
+			<dt class="blue"><span>价格：</span>
+			{php $price_rang = array('100元以下|1_100','100-300元|100-300','300-500元|300_500','1000-2000元|1000_2000','2000元以上|2000_9999')}
+			{loop filters('price',$modelid,$price_rang) $r}
+				{$r[menu]}
+			{/loop}
+			</dt>
+        </dl>
+        
+    </div>
+    <div class="bk15"></div>
+    <ul class="tabitem cu-span clear">
+		{loop filters('agent',$modelid) $r}
+			<li {if $_GET['agent'] == $r[value]}class="on"{/if}><a href="{$r[url]}"><span>{$r[name]}</span></a></li>
+		{/loop}			
+        <li class="add"><a href="index.php?m=member&c=content&a=info_publish&siteid=1&catid={$catid}&city={$city}&zone={$zone}" target="_blank">免费发布信息>></a></li>
+    </ul>
+    <ul class="filter clear">
+    	<li>找到相关信息<b id="total"></b>条</li>
+
+    </ul>
+</div>
+<div class="wp clear info-article">
+	
+	<div class="col-auto">
+	{php $sql = structure_filters_sql($modelid)}
+	{php $cachetime = getinfocache('info_cachetime')}
+	<div class="box_f">
+		<ul class="phbang">
+		    <li><a href="bmfgoods.asp?act=bmf&amp;order=all">所有圣品</a></li>
+            <li><a href="bmfgoods.asp?act=bmf&amp;order=time&amp;sx=ji&amp;cz=heihuoshi">新品上架</a></li>
+            <li><a href="bmfgoods.asp?act=bmf&amp;order=view&amp;sx=ji&amp;cz=heihuoshi">人气排行</a></li>
+            <li><a href="bmfgoods.asp?act=bmf&amp;order=price&amp;sx=ji&amp;cz=heihuoshi">价格排行</a></li>
+            <li><a href="bmfgoods.asp?act=bmf&amp;order=hot&amp;sx=ji&amp;cz=heihuoshi" class="curre01">畅销圣品</a></li>
+          </ul>
+		  {php $urlrule = makeurlrule()}
+			{pc:content action="lists" catid="$catid"  where="$sql" num="15" order="listorder DESC,inputtime DESC" page="$page" moreinfo="1" cache="$cachetime" urlrule="$urlrule"}
+		<ul class="cp01zs">
+		<div style="display:none" id="content_total">{$content_total}</div>	
+		{loop $data $r}
+			{php $photos_num = count(string2array($r[photos]))}
+			  <li><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{$r[thumb]}" onerror="this.src='{$r[thumb]}'" width="150" height="150"></a>
+                <p><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],40)}</a></p>
+                <p>货号：{$r[product_num]}</p>
+                <p>材质：{box('material',$r[material],$modelid)}</p>
+                <p>结缘价：￥{$r[price]} 元</p>
+				<p align="center"><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src=" {IMG_PATH}info/buy_icon_01.gif"></a>&nbsp;&nbsp;<a href="{$r[url]}"><img src=" {IMG_PATH}info/buy_icon_02.gif"></a></p>
+              </li>
+			  {/loop}
+			
+            </ul>
+			{/pc}
+        </div>
+		<div id="pages" class="text-c">{$pages}</div>
+    </div>
+</div>
+<script language="JavaScript" src="{APP_PATH}api.php?op=top"></script>
+<script language="javascript" type="text/javascript">
+$(document).ready(function(){
+	var content_total = $("#content_total").html();
+	$("#total").html(content_total);
+	
+});
+function i_query() {
+	var param = $('#q').val();
+	var url = "{structure_filters_url('q',array('q'=>'"+param+"'),2)}";
+	location.href = url;
+}
+</script>
+{template "content","footer"}

@@ -135,7 +135,18 @@ class content extends admin {
 				} else {
 					$_POST['info']['status'] = 99;
 				}
-				$this->db->add_content($_POST['info']);
+
+				$insert_id = $this->db->add_content($_POST['info']);
+				/*lcc 生成商品编号*/
+				if($modelid == 14)
+				{
+					$chars_array = explode(' ', 'A B C D E F G H I J K L M N O P Q R S J U V W X Y Z');
+					$i = mt_rand(0,count($chars_array)-1);
+					$product_num = 'CP'.str_pad($insert_id,5,'0',STR_PAD_LEFT ).$chars_array[$i];;
+					$edit_array = array('product_num'=>$product_num);
+					$this->db->edit_content($edit_array,$insert_id);
+				}
+				/*lcc end*/
 				if(isset($_POST['dosubmit'])) {
 					showmessage(L('add_success').L('2s_close'),'blank','','','function set_time() {$("#secondid").html(1);}setTimeout("set_time()", 500);setTimeout("window.close()", 1200);');
 				} else {
@@ -172,6 +183,7 @@ class content extends admin {
 					require CACHE_MODEL_PATH.'content_form.class.php';
 					$content_form = new content_form($modelid,$catid,$this->categorys);
 					$forminfos = $content_form->get();
+					///var_dump($forminfos);exit;
  					$formValidator = $content_form->formValidator;
 					$setting = string2array($category['setting']);
 					$workflowid = $setting['workflowid'];

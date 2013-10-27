@@ -7,6 +7,8 @@
  * @lastmodify			2010-6-1
  */
 
+ 
+ 
 /**
  * 返回经addslashes处理过的字符串或数组
  * @param $string 需要处理的字符串或数组

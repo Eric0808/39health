@@ -10,8 +10,8 @@ return array (
     'keywords' => '非常运势算命网',
     'description' => '非常运势算命网',
     'release_point' => '',
-    'default_style' => 'constellation',
-    'template' => 'constellation,default',
+    'default_style' => 'default',
+    'template' => 'default',
     'setting' => 'array (
   \'upload_maxsize\' => \'2048\',
   \'upload_allowext\' => \'jpg|jpeg|gif|bmp|png|doc|docx|xls|xlsx|ppt|pptx|pdf|txt|rar|zip|swf\',

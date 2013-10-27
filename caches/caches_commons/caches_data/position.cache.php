@@ -24,6 +24,42 @@ return array (
     'siteid' => '1',
     'thumb' => '',
   ),
+  19 => 
+  array (
+    'posid' => '19',
+    'modelid' => '13',
+    'catid' => '0',
+    'name' => '区域置顶',
+    'maxnum' => '20',
+    'extention' => 'get_linkage({zone},getinfocache(\'info_linkageid\'), \'_\',4)',
+    'listorder' => '0',
+    'siteid' => '1',
+    'thumb' => '',
+  ),
+  18 => 
+  array (
+    'posid' => '18',
+    'modelid' => '13',
+    'catid' => '0',
+    'name' => '城市置顶',
+    'maxnum' => '20',
+    'extention' => 'get_linkage({zone},getinfocache(\'info_linkageid\'), \'_\',4)',
+    'listorder' => '0',
+    'siteid' => '1',
+    'thumb' => '',
+  ),
+  17 => 
+  array (
+    'posid' => '17',
+    'modelid' => '0',
+    'catid' => '0',
+    'name' => '视频栏目精彩推荐',
+    'maxnum' => '20',
+    'extention' => '',
+    'listorder' => '0',
+    'siteid' => '1',
+    'thumb' => '',
+  ),
   16 => 
   array (
     'posid' => '16',
@@ -132,14 +168,14 @@ return array (
     'siteid' => '1',
     'thumb' => '',
   ),
-  17 => 
+  20 => 
   array (
-    'posid' => '17',
-    'modelid' => '0',
+    'posid' => '20',
+    'modelid' => '13',
     'catid' => '0',
-    'name' => '视频栏目精彩推荐',
+    'name' => '商圈置顶',
     'maxnum' => '20',
-    'extention' => '',
+    'extention' => 'get_linkage({zone},getinfocache(\'info_linkageid\'), \'_\',4)',
     'listorder' => '0',
     'siteid' => '1',
     'thumb' => '',

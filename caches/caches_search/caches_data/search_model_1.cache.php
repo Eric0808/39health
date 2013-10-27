@@ -1,5 +1,17 @@
 <?php
 return array (
+  14 => 
+  array (
+    'typeid' => '55',
+    'name' => '开运商品',
+    'sort' => '0',
+  ),
+  13 => 
+  array (
+    'typeid' => '54',
+    'name' => '房产信息',
+    'sort' => '0',
+  ),
   1 => 
   array (
     'typeid' => '1',
