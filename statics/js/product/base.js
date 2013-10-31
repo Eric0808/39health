@@ -1,0 +1,1 @@
+KISSY.use("brix/core/pagelet",function(b,a){b.ready(function(){var c=new a({tmpl:"body"});c.addBehavior()})});
