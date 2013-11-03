@@ -2,8 +2,6 @@
 defined('IN_ADMIN') or exit('No permission resources.'); 
 include $this->admin_tpl('header', 'admin');
 ?>
-<link href="<?php echo CSS_PATH?>dianping.css" rel="stylesheet" type="text/css" />
-
 <div class="pad-lr-10">
 <?php include PHPCMS_PATH.'star_config.php';?>
 <form name="form" action="?m=dianping&c=dianping&a=dianping_data&menuid=<?php echo $_GET['menuid'];?>" method="get" >
@@ -72,16 +70,12 @@ include $this->admin_tpl('header', 'admin');
 		foreach ($data as $name=>$val){
 		?>
 	 		<b><?php echo $name;?>：</b>
-	 		<?php if($name=='平均得分'){?>
-	 			<dl class="lite-rate ib"><dd style="width:<?php echo $val;?>%"></dd></dl>
-	 		<?php }else{?>
-		 		<?php for($n=1;$n<=$val;$n++){?>
-		 		<img alt="分" src="<?php echo APP_PATH;?>/statics/images/star2.gif">
-		 		<?php }?> 
-		 		<?php for($k=1;$k<=(5-$val);$k++){?>
-		 		<img alt="分" src="<?php echo APP_PATH;?>/statics/images/star1.gif">
-		 		<?php }?>  
-	 		<?php }?>
+	 		<?php for($n=1;$n<=$val;$n++){?>
+	 		<img alt="分" src="<?php echo APP_PATH;?>/statics/images/star2.gif">
+	 		<?php }?> 
+	 		<?php for($k=1;$k<=(5-$val);$k++){?>
+	 		<img alt="分" src="<?php echo APP_PATH;?>/statics/images/star1.gif">
+	 		<?php }?>  
 		<?php }?>
     </div>
     <div class="bk20 hr mb8"></div>

@@ -19,7 +19,7 @@ function show_element(name) {
 
 $(document).ready(function(){
 　　$("input.input-text").blur(function () { this.className='input-text'; } );
-　　$(":text").focus(function(){this.className='input-focus';});
+　　$("input.input-text',input[type='password'],textarea").focus(function () { this.className='input-focus'; } );
 });
 
 /**
@@ -61,7 +61,7 @@ function remove_div(id) {
 }
 
 function select_catids() {
-	$('#addbutton').attr('disabled',false);
+	$('#addbutton').attr('disabled','');
 
 }
 

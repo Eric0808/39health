@@ -142,6 +142,7 @@ $(function(){
 			</div>
 			<?php } ?>
     </div>
+    <?php if(param::get_cookie('_userid')==false && defined('DENGLU_URL')) { ?><iframe width="584" scrolling="no" height="100" frameborder="0" id="denglu_login" name="denglu_login" src="http://<?php echo DENGLU_URL;?>.denglu.cc/connect/login?appid=<?php echo DENGLU_APPID;?>" allowtransparency="true" fwin="register"></iframe><?php } ?>
 </div>
 
 <script language="JavaScript">

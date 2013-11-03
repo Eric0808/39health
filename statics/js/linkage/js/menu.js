@@ -82,7 +82,7 @@ function get_menu_val(nodename,nodeid,cachepath) {
 		}
 		if (returnfunc) {
 			obj=new Object();
-			obj.value = data;
+			obj.value = nodeid;
 			get_additional(obj);
 		}
 	})	

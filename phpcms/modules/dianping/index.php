@@ -119,21 +119,9 @@ class index {
 				showmessage('此信息必须登录过才能点评！',HTTP_REFERER);return false;
 			}
 		}
-		
-		if ($type_setting['code']) {
-			$session_storage = 'session_'.pc_base::load_config('system','session_storage');
-			pc_base::load_sys_class($session_storage);
-			session_start();
-			$code = isset($_POST['code']) && trim($_POST['code']) ? strtolower(trim($_POST['code'])) : $this->_show_msg(L('please_enter_code'), HTTP_REFERER);
-			if ($code != $_SESSION['code']) {
-			$this->_show_msg(L('code_error'), HTTP_REFERER);
-			}
-		}
-
 		if($is_checkuserid){
 			//要检查会员信息
 			$contentid = intval($_GET['contentid']);
-			if (!$contentid) list($mod, $contentid, $siteid) = explode('-', $dianpingid);
 			$comment_relation = pc_base::load_model('comment_relation_model');
 			$sql = array("userid"=>$this->userid,'module'=>$module,'contentid'=>$contentid);
  			$allowdianping_array = $comment_relation->get_one($sql);

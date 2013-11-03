@@ -18,7 +18,11 @@
         <div class="etao-nav-item login-info" id="J_LoginInfo">
 		<span class="rt"><script type="text/javascript">document.write('<iframe src="<?php echo APP_PATH;?>index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=<?php echo get_siteid();?>" allowTransparency="true"  width="500" height="24" frameborder="0" scrolling="no"></iframe>')</script></span>
 		</div>
-        <!-- 我的一淘 -->
+		<div class="etao-nav-item my-etao" >
+		<div class="rt nav-car" id="buy_show" style="display:none;">购物车 <strong class="F_arial" id="buy_show_num">2</strong> 件
+         </div>
+		 </div>
+		<!-- 我的一淘 -->
         <div class="etao-nav-item my-etao" id="J_MyEtao">
             <a aria-label="我的一淘菜单，下键打开菜单，ESC关闭" aria-haspopup="true" rel="nofollow" href="http://i.etao.com" target="_blank" ><b>我的一淘</b><i>&#8193</i></a>
             <ul role="menu" class="etao-nav-list">
@@ -28,7 +32,6 @@
         <!-- end-->
     </div>
 </div>
-<script>new ETao.Header();</script>
 	<div class="etao-logo dib">
 <a class="etao-main-logo" target="_top" href="#">&#19968&#28120</a>
 <a class="etao-en-logo" target="_top" href="#"><span>etao.com</span></a>

@@ -62,3 +62,58 @@
 <?php exit;?>11-01 01:05:47 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
 <?php exit;?>11-01 01:05:59 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
 <?php exit;?>11-01 01:06:02 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
+<?php exit;?>11-03 20:49:07 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
+<?php exit;?>11-03 21:11:30 | 2 | Missing argument 3 for new_denglu_write(), called in D:\www\39health\phpcms\modules\denglu\install\model.php on line 49 and defined | phpcms\modules\denglu\install\model.php | 13
+<?php exit;?>11-03 21:11:38 | 2 | Missing argument 3 for new_denglu_write(), called in D:\www\39health\phpcms\modules\denglu\install\model.php on line 49 and defined | phpcms\modules\denglu\install\model.php | 13
+<?php exit;?>11-03 21:11:38 | 2 | Missing argument 3 for new_denglu_write(), called in D:\www\39health\phpcms\modules\denglu\install\model.php on line 49 and defined | phpcms\modules\denglu\install\model.php | 13
+<?php exit;?>11-03 21:11:38 | 2 | Missing argument 3 for new_denglu_write(), called in D:\www\39health\phpcms\modules\denglu\install\model.php on line 49 and defined | phpcms\modules\denglu\install\model.php | 13
+<?php exit;?>11-03 21:12:32 | 2 | Invalid argument supplied for foreach() | phpcms\modules\denglu\templates\denglu_admin_media.tpl.php | 22
+<?php exit;?>11-03 22:05:55 | 2 | Invalid argument supplied for foreach() | phpcms\modules\denglu\templates\denglu_admin_media.tpl.php | 22
+<?php exit;?>11-03 22:09:33 | 2 | Invalid argument supplied for foreach() | phpcms\modules\denglu\templates\denglu_admin_media.tpl.php | 22
+<?php exit;?>11-03 22:09:34 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 22:13:45 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 22:13:56 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 22:13:56 | 2 | Invalid argument supplied for foreach() | phpcms\modules\denglu\index.php | 169
+<?php exit;?>11-03 22:13:56 | 2 | arsort() expects parameter 1 to be array, null given | phpcms\modules\denglu\index.php | 172
+<?php exit;?>11-03 22:13:56 | 2 | max() [<a href='function.max'>function.max</a>]: When only one parameter is given, it must be an array | phpcms\modules\denglu\index.php | 175
+<?php exit;?>11-03 22:13:56 | 2 | Invalid argument supplied for foreach() | phpcms\modules\denglu\index.php | 178
+<?php exit;?>11-03 22:13:56 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 22:13:56 | 2048 | Redefining already defined constructor for class thumb | phpcms\modules\denglu\functions\thumb.class.php | 17
+<?php exit;?>11-03 22:13:56 | 2 | getimagesize() [<a href='function.getimagesize'>function.getimagesize</a>]: Filename cannot be empty | phpcms\modules\denglu\functions\thumb.class.php | 443
+<?php exit;?>11-03 22:13:56 | 2 | copy() [<a href='function.copy'>function.copy</a>]: Filename cannot be empty | phpcms\modules\denglu\functions\thumb.class.php | 41
+<?php exit;?>11-03 22:13:56 | 2 | getimagesize(D:/www/39health/phpcms/modules/denglu/avatar/c914f1a926) [<a href='function.getimagesize'>function.getimagesize</a>]: failed to open stream: No such file or directory | phpcms\modules\denglu\functions\thumb.class.php | 71
+<?php exit;?>11-03 22:13:56 | 2 | getimagesize(D:/www/39health/phpcms/modules/denglu/avatar/c914f1a926) [<a href='function.getimagesize'>function.getimagesize</a>]: failed to open stream: No such file or directory | phpcms\modules\denglu\functions\thumb.class.php | 71
+<?php exit;?>11-03 22:13:56 | 2 | getimagesize(D:/www/39health/phpcms/modules/denglu/avatar/c914f1a926) [<a href='function.getimagesize'>function.getimagesize</a>]: failed to open stream: No such file or directory | phpcms\modules\denglu\functions\thumb.class.php | 71
+<?php exit;?>11-03 22:13:56 | 2 | getimagesize(D:/www/39health/phpcms/modules/denglu/avatar/c914f1a926) [<a href='function.getimagesize'>function.getimagesize</a>]: failed to open stream: No such file or directory | phpcms\modules\denglu\functions\thumb.class.php | 71
+<?php exit;?>11-03 22:13:56 | 2 | unlink(D:/www/39health/phpcms/modules/denglu/avatar/c914f1a926) [<a href='function.unlink'>function.unlink</a>]: No such file or directory | phpcms\modules\denglu\functions\global.func.php | 197
+<?php exit;?>11-03 22:15:07 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 22:15:13 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 22:15:32 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 22:15:51 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 22:16:25 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 22:16:38 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 22:16:38 | 2 | Invalid argument supplied for foreach() | phpcms\modules\denglu\index.php | 169
+<?php exit;?>11-03 22:16:38 | 2 | arsort() expects parameter 1 to be array, null given | phpcms\modules\denglu\index.php | 172
+<?php exit;?>11-03 22:16:38 | 2 | max() [<a href='function.max'>function.max</a>]: When only one parameter is given, it must be an array | phpcms\modules\denglu\index.php | 175
+<?php exit;?>11-03 22:16:38 | 2 | Invalid argument supplied for foreach() | phpcms\modules\denglu\index.php | 178
+<?php exit;?>11-03 22:20:47 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
+<?php exit;?>11-03 23:43:28 | 2 | array_keys() expects parameter 1 to be array, boolean given | phpcms\modules\yp\content.php | 22
+<?php exit;?>11-03 23:43:28 | 2 | array_shift() expects parameter 1 to be array, null given | phpcms\modules\yp\content.php | 23
+<?php exit;?>11-03 23:45:13 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 231
+<?php exit;?>11-03 23:45:14 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 231
+<?php exit;?>11-03 23:50:34 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 23:52:05 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 23:52:07 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-03 23:53:46 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-04 00:26:38 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-04 00:26:40 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-04 00:26:49 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-04 00:38:04 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-04 22:31:22 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
+<?php exit;?>11-04 22:31:33 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
+<?php exit;?>11-04 22:31:34 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
+<?php exit;?>11-04 22:31:50 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
+<?php exit;?>11-04 22:31:56 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
+<?php exit;?>11-04 22:31:57 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
+<?php exit;?>11-04 22:54:13 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
+<?php exit;?>11-05 00:10:22 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125

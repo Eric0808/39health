@@ -342,6 +342,7 @@ function show_protocol() {
                 <input type="checkbox" name="protocol" id="protocol" value=""><a href="javascript:void(0);" onclick="show_protocol();return false;" class="blue">{L('click_read_protocol')}</a>
             </div>
         </div>
+        {if param::get_cookie('_userid')==false && defined('DENGLU_URL')}<iframe width="584" scrolling="no" height="100" frameborder="0" id="denglu_login" name="denglu_login" src="http://{DENGLU_URL}.denglu.cc/connect/login?appid={DENGLU_APPID}" allowtransparency="true" fwin="register"></iframe>{/if}
 </form>
 {elseif isset($_GET['t']) && $_GET['t']==2}
 <div class="col-left form-login form-reg">

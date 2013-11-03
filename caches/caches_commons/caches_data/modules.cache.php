@@ -520,5 +520,138 @@ return array (
     'installdate' => '2012-08-15',
     'updatedate' => '2012-08-17',
   ),
+  'denglu' => 
+  array (
+    'module' => 'denglu',
+    'name' => '灯鹭',
+    'url' => 'denglu/',
+    'iscore' => '0',
+    'version' => '1.0.0',
+    'description' => '灯鹭',
+    'setting' => '',
+    'listorder' => '0',
+    'disabled' => '0',
+    'installdate' => '2013-11-03',
+    'updatedate' => '2013-11-03',
+  ),
+  'yp' => 
+  array (
+    'module' => 'yp',
+    'name' => '企业黄页',
+    'url' => 'yp/',
+    'iscore' => '0',
+    'version' => '1.0',
+    'description' => '企业黄页',
+    'setting' => 'array (
+  \'position\' => 
+  array (
+    1 => 
+    array (
+      \'posid\' => \'9\',
+      \'name\' => \'全局置顶\',
+      \'point\' => \'1\',
+      \'num\' => \'10\',
+    ),
+    2 => 
+    array (
+      \'posid\' => \'8\',
+      \'name\' => \'列表置顶\',
+      \'point\' => \'2\',
+      \'num\' => \'5\',
+    ),
+  ),
+  \'ischeck\' => \'1\',
+  \'isbusiness\' => \'1\',
+  \'enable_rewrite\' => \'0\',
+  \'encode_page_cache\' => \'1\',
+  \'seo_title\' => \'北京黄页大全\',
+  \'seo_keywords\' => \'北京黄页大全 企业库 网上商店\',
+  \'seo_description\' => \'本站是北京地区最大、最全的企业库，欢迎入驻！\',
+  \'priv\' => 
+  array (
+    8 => 
+    array (
+      \'view\' => 
+      array (
+        20 => \'1\',
+        19 => \'1\',
+        18 => \'1\',
+      ),
+    ),
+    2 => 
+    array (
+      \'allowpostverify\' => \'1\',
+      20 => \'1\',
+      \'view\' => 
+      array (
+        20 => \'1\',
+        19 => \'1\',
+        18 => \'1\',
+      ),
+      19 => \'1\',
+      18 => \'1\',
+    ),
+    6 => 
+    array (
+      \'allowpostverify\' => \'1\',
+      20 => \'1\',
+      \'view\' => 
+      array (
+        20 => \'1\',
+        19 => \'1\',
+        18 => \'1\',
+      ),
+      18 => \'1\',
+    ),
+    4 => 
+    array (
+      \'allowpostverify\' => \'1\',
+      20 => \'1\',
+      \'view\' => 
+      array (
+        20 => \'1\',
+        19 => \'1\',
+        18 => \'1\',
+      ),
+      19 => \'1\',
+    ),
+    5 => 
+    array (
+      \'allowpostverify\' => \'1\',
+      20 => \'1\',
+      \'view\' => 
+      array (
+        20 => \'1\',
+        19 => \'1\',
+        18 => \'1\',
+      ),
+      19 => \'1\',
+      18 => \'1\',
+    ),
+    1 => 
+    array (
+      \'view\' => 
+      array (
+        20 => \'1\',
+        19 => \'1\',
+        18 => \'1\',
+      ),
+    ),
+    7 => 
+    array (
+      \'view\' => 
+      array (
+        20 => \'1\',
+        19 => \'1\',
+        18 => \'1\',
+      ),
+    ),
+  ),
+)',
+    'listorder' => '0',
+    'disabled' => '0',
+    'installdate' => '2013-11-03',
+    'updatedate' => '2013-11-03',
+  ),
 );
 ?>

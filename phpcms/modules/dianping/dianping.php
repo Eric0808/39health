@@ -169,7 +169,7 @@ class dianping extends admin {
 				showmessage('类型数据不能为空',HTTP_REFERER);
 			}
 			if($_POST['setting']){
-				$_POST['type']['setting'] = array2string($_POST['setting']);
+				$_POST['type']['setting'] = $_POST['setting'];
 			}
 			$typeid = $this->dianping_type->insert($_POST['type'],true);
 			if(!$typeid) return FALSE;
