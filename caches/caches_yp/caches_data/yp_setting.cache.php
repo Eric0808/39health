@@ -5,15 +5,15 @@ return array (
     1 => 
     array (
       'posid' => '9',
-      'name' => '全局黄页置顶',
-      'point' => '2',
+      'name' => '全局置顶',
+      'point' => '1',
       'num' => '10',
     ),
     2 => 
     array (
       'posid' => '8',
       'name' => '列表置顶',
-      'point' => '1',
+      'point' => '2',
       'num' => '5',
     ),
   ),
@@ -21,38 +21,66 @@ return array (
   'isbusiness' => '1',
   'enable_rewrite' => '0',
   'encode_page_cache' => '1',
-  'seo_title' => 'PHPCMS企业黄页',
-  'seo_keywords' => 'PHPCMS,企业黄页,V9',
-  'seo_description' => '',
+  'seo_title' => '北京黄页大全',
+  'seo_keywords' => '北京黄页大全 企业库 网上商店',
+  'seo_description' => '本站是北京地区最大、最全的企业库，欢迎入驻！',
   'priv' => 
   array (
+    8 => 
+    array (
+      'view' => 
+      array (
+        18 => '1',
+      ),
+    ),
     2 => 
     array (
       'allowpostverify' => '1',
-      12 => '1',
-      13 => '1',
-      14 => '1',
+      18 => '1',
+      'view' => 
+      array (
+        18 => '1',
+      ),
     ),
     6 => 
     array (
       'allowpostverify' => '1',
-      12 => '1',
-      13 => '1',
-      14 => '1',
+      18 => '1',
+      'view' => 
+      array (
+        18 => '1',
+      ),
     ),
     4 => 
     array (
       'allowpostverify' => '1',
-      12 => '1',
-      13 => '1',
-      14 => '1',
+      'view' => 
+      array (
+        18 => '1',
+      ),
     ),
     5 => 
     array (
       'allowpostverify' => '1',
-      12 => '1',
-      13 => '1',
-      14 => '1',
+      18 => '1',
+      'view' => 
+      array (
+        18 => '1',
+      ),
+    ),
+    1 => 
+    array (
+      'view' => 
+      array (
+        18 => '1',
+      ),
+    ),
+    7 => 
+    array (
+      'view' => 
+      array (
+        18 => '1',
+      ),
     ),
   ),
 );

@@ -12,7 +12,6 @@
             <th width="10%">商品名</th>
             <th width="10%">联系电话</th>
 			<th width="10%">金额</th>
-            <th width="20%">备注</th>
 			<th width="8%">状态</th>
 			<th width="5%"> </th>
             </tr>
@@ -21,10 +20,9 @@
 	<?php $n=1;if(is_array($data)) foreach($data AS $info) { ?> 
 	<tr>
 	<td width="15%" align="center"><?php echo $info['order_sn'];?></td>
-	<td  width="10%" align="center"><?php echo $info['username'];?></td>
+	<td  width="30%" align="center"><?php echo $info['contactname'];?></td>
 	<td width="10%" align="center"><?php echo $info['telephone'];?></td>
 	<td width="10%" align="center"><?php echo $info['money'];?></td>
-	<td width="20%" align="center"><?php echo $info['usernote'];?></td>
 	<td width="8%" align="center"><?php if($info['status']==0) { ?><span style="color:#f00">等待发货</span><?php } else { ?><span style="color:#BAB5AB">已发货</span><?php } ?></td>
 	<td width="5%" align="center"><a href="<?php echo APP_PATH;?>index.php?m=yp&c=business&a=check_pay&id=<?php echo $info['id'];?>">详情</a></td>
 	</tr>

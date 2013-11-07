@@ -52,11 +52,27 @@ class order {
 
 	/**
 	 * 获取订单信息
-	 * @param intval $userid 商户ID
+	 * @param intval $userid 管理员ID
 	 * @param intval(0/1) $status 0表示未发货订单，1表示已发货订单，为空为全部订单
 	 */
 	public function listinfo($userid, $status) {
 		$where = array('uid'=>$userid);
+		if (isset($status) && is_numeric($status)) {
+			$where['status'] = $status;
+		}
+		$page = max(intval($_GET['page']), 1);
+		$data = $this->db->listinfo($where, '`id` DESC', $page);
+		$this->pages = $this->db->pages;
+		return $data;
+	}
+
+	/**
+	 * 获取订单信息
+	 * @param intval $userid 用户ID
+	 * @param intval(0/1) $status 0表示未发货订单，1表示已发货订单，为空为全部订单
+	 */
+	public function user_listinfo($userid, $status) {
+		$where = array('userid'=>$userid);
 		if (isset($status) && is_numeric($status)) {
 			$where['status'] = $status;
 		}

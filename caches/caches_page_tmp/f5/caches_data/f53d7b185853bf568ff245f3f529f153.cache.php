@@ -1,5 +1,5 @@
 <?php
-return '<!--expiretime:1383581761-->
+return '<!--expiretime:1383754470-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -96,7 +96,7 @@ return '<!--expiretime:1383581761-->
 			<div class="yp-login ypbox">
 				<div class="title"><a href="http://localhost/index.php?m=member&c=index&a=logout&forward=http%3A%2F%2Flocalhost%2Findex.php%3Fm%3Dyp%26c%3Dindex%26a%3Dinit" class="rt blue">退出</a>您好！<a href="http://localhost/index.php?m=member&siteid=1" class="blue">chenyao</a></div>
 				<ul class="alerts">
-					<li>用户组：新手上路</li>
+					<li>用户组：高级会员</li>
 					<li>积分：<font color=red>1000</font></li>
 				</ul>
 				<p class="yp-content">

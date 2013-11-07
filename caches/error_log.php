@@ -117,3 +117,7 @@
 <?php exit;?>11-04 22:31:57 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
 <?php exit;?>11-04 22:54:13 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
 <?php exit;?>11-05 00:10:22 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-06 23:25:01 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-06 23:36:08 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-06 23:36:40 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-06 23:36:43 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125

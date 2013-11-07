@@ -16,11 +16,16 @@ class business extends common {
 		define('COMPANY_URL', $company_memberinfo['url']);
    	}
 
+   	public function init()
+   	{
+   		header("location:index.php?m=yp&c=business&a=pay&t=4");
+   	}
+
 	//订单处理
 	public function pay() {
 		$o = pc_base::load_app_class('order');
 		$status = isset($_GET['status']) ? intval($_GET['status']) : '';
-		$data = $o->listinfo($this->_userid, $status);
+		$data = $o->user_listinfo($this->_userid, $status);
 		$pages = $o->pages;
 		include template('yp', 'company_order');
 	}

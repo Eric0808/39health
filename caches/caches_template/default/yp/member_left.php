@@ -8,7 +8,7 @@
       <h6 class="title">我的订单</h6>
             <ul class="left-info">
 			  <?php if($this->setting['isbusiness']) { ?>
-			  <li<?php if(ROUTE_A=="pay" && ROUTE_C=="business") { ?> class="on"<?php } ?>><a href="index.php?m=yp&c=business&a=pay&t=3">订单处理(<font color=red><?php echo get_orders();?></font>)</a> </li>
+			  <li<?php if(ROUTE_A=="pay" && ROUTE_C=="business") { ?> class="on"<?php } ?>><a href="index.php?m=yp&c=business&a=pay&t=4">订单处理(<font color=red><?php echo get_orders();?></font>)</a> </li>
 			  <?php } ?>
            </ul>
       <span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
