@@ -11,10 +11,6 @@ include $this->admin_tpl('header', 'admin');?>
 </style>
 <form name="myform" action="?m=yp&c=category&a=listorder&modelid=<?php echo $modelid?>" method="post">
 <div class="pad_10">
-<div class="explain-col">
-<?php echo L('category_cache_tips');?>,<?php echo L('update_cache');?>。<input type="button" class="button" name="updatecache" value="<?php echo L('update_cache')?>" onclick="location.href='?m=yp&c=category&a=public_cache&module=yp&modelid=<?php echo $modelid?>';"/>
-<input type="button" class="button" name="exporttypes" value="<?php echo L('import_category')?>"  onclick="cexport('<?php echo $modelid?>', '<?php echo L('import').$m['name'].L('yp_category')?>')"/>
-</div>
 <div class="bk10"></div>
 <div class="table-list">
     <table width="100%" cellspacing="0" >
