@@ -465,6 +465,7 @@ $LANG['1'] = '';
 $LANG['yp'] = '企业黄页';
 $LANG['yp_setting'] = '模块配置';
 $LANG['yp_category_manage'] = '分类管理';
+$LANG['admin_order_manage'] = '订单管理';
 $LANG['yp_add_category'] = '添加分类';
 $LANG['yp_edit_category'] = '修改分类';
 $LANG['yp_model_manage'] = '黄页模型管理';

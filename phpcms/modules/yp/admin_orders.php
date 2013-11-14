@@ -18,7 +18,8 @@ class admin_orders extends admin {
 			);
 		$o = pc_base::load_app_class('order');
 		$status = isset($_GET['status']) ? intval($_GET['status']) : '';
-		$data = $o->user_listinfo($this->_userid, $status);
+		//echo $status;exit;
+		$data = $o->admin_listinfo($this->_userid, $status);
 		$pages = $o->pages;
 		include $this->admin_tpl('order_list');
 	}
@@ -34,7 +35,7 @@ class admin_orders extends admin {
             showmessage(L('operation_success'), APP_PATH.'index.php?m=yp&c=business&a=pay&t=3');
         } else {
             $info = $o->get($id);
-            include template ('yp', 'company_check_order');
+            include $this->admin_tpl('order_detail');
         }
 	}
 

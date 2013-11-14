@@ -55,7 +55,7 @@ class order {
 	 * @param intval $userid 管理员ID
 	 * @param intval(0/1) $status 0表示未发货订单，1表示已发货订单，为空为全部订单
 	 */
-	public function listinfo($userid, $status) {
+	public function admin_listinfo($userid, $status) {
 		$where = array('uid'=>$userid);
 		if (isset($status) && is_numeric($status)) {
 			$where['status'] = $status;
