@@ -25,6 +25,7 @@ class admin_orders extends admin {
 	}
 	//查看订单详情
 	public function check_pay() {
+		unset($show_header);
         $id = intval($_GET['id']);
         if (!$id) {
             showmessage(L('illegal_parameters'));
@@ -32,11 +33,19 @@ class admin_orders extends admin {
         $o = pc_base::load_app_class('order');
         if (isset($_POST['dosubmit'])) {
             $o->update($id, $_POST['info']);
-            showmessage(L('operation_success'), APP_PATH.'index.php?m=yp&c=business&a=pay&t=3');
+            showmessage(L('operation_success'), APP_PATH.'index.php?m=yp&c=admin_orders&a=pay&t=3');
         } else {
             $info = $o->get($id);
+            //print_r($info);
             include $this->admin_tpl('order_detail');
         }
+	}
+
+	//发布商品
+	public function add_product()
+	{
+		$url_forward = APP_PATH.'index.php?m=content&c=content&a=add&menuid=&catid=15';
+		showmessage('发布商品', $url_forward);
 	}
 
 }

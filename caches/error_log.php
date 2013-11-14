@@ -121,3 +121,11 @@
 <?php exit;?>11-06 23:36:08 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
 <?php exit;?>11-06 23:36:40 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
 <?php exit;?>11-06 23:36:43 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-14 23:29:36 | 2 | Invalid argument supplied for foreach() | phpcms\modules\yp\templates\order_detail.tpl.php | 41
+<?php exit;?>11-14 23:29:57 | 2 | Invalid argument supplied for foreach() | phpcms\modules\yp\templates\order_detail.tpl.php | 41
+<?php exit;?>11-14 23:31:12 | 2 | Invalid argument supplied for foreach() | phpcms\modules\yp\templates\order_detail.tpl.php | 41
+<?php exit;?>11-14 23:33:16 | 2 | Invalid argument supplied for foreach() | phpcms\modules\yp\templates\order_detail.tpl.php | 41
+<?php exit;?>11-14 23:33:22 | 2 | Invalid argument supplied for foreach() | phpcms\modules\yp\templates\order_detail.tpl.php | 41
+<?php exit;?>11-14 23:36:41 | 2 | Invalid argument supplied for foreach() | phpcms\modules\yp\templates\order_detail.tpl.php | 41
+<?php exit;?>11-14 23:38:57 | 2 | Invalid argument supplied for foreach() | phpcms\modules\yp\templates\order_detail.tpl.php | 41
+<?php exit;?>11-14 23:39:35 | 2 | Invalid argument supplied for foreach() | phpcms\modules\yp\templates\order_detail.tpl.php | 41

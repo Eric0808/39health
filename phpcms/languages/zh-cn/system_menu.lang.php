@@ -382,7 +382,7 @@ $LANG['upgrade'] = '在线升级';
 $LANG['checkfile'] = '文件校验';
 
 $LANG['additional_field'] = '附加字段管理';
-$LANG['company_template_manage'] = '企业模板管理';
+$LANG['mall_add_product'] = '发布商品';
 $LANG['add_new_template'] = '添加新模板';
 $LANG['setdefaulttpl'] = '设置默认模板';
 $LANG['priv_setting'] = '权限设置';
@@ -462,7 +462,7 @@ $LANG['ask_settings'] = '问答配置';
 $LANG['denglu_setting'] = '合作网站设置';
 $LANG['0'] = 'denglu_media_info';
 $LANG['1'] = '';
-$LANG['yp'] = '企业黄页';
+$LANG['mall'] = '开运商城';
 $LANG['yp_setting'] = '模块配置';
 $LANG['yp_category_manage'] = '分类管理';
 $LANG['admin_order_manage'] = '订单管理';

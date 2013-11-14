@@ -1,6 +1,6 @@
 <?php
 defined('IN_ADMIN') or exit('No permission resources.');
-include $this->admin_tpl('header', 'admin');?>
+include $this->admin_tpl('header_order', 'admin');?>
 <div class="subnav">
  <div class="content-menu ib-a blue line-x">
  <a href=<?php if (!isset($_GET['status'])) {?>'javascript:;' class="on"<?php } else {?>'index.php?m=yp&c=admin_orders&a=pay&t=3<?php }?>'><em>全部订单</em></a><span>|</span>
