@@ -504,4 +504,7 @@ $LANG['additional_edit'] = '修改附加字段';
 $LANG['additional_disabled'] = '禁用附件字段';
 $LANG['additional_delete'] = '删除附加字段';
 $LANG['additional_listorder'] = '附加字段排序';
+
+$LANG['invite'] = '会员邀请';
+$LANG['invite_setting'] = '邀请设置';
 ?>

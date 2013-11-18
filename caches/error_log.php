@@ -129,3 +129,6 @@
 <?php exit;?>11-14 23:36:41 | 2 | Invalid argument supplied for foreach() | phpcms\modules\yp\templates\order_detail.tpl.php | 41
 <?php exit;?>11-14 23:38:57 | 2 | Invalid argument supplied for foreach() | phpcms\modules\yp\templates\order_detail.tpl.php | 41
 <?php exit;?>11-14 23:39:35 | 2 | Invalid argument supplied for foreach() | phpcms\modules\yp\templates\order_detail.tpl.php | 41
+<?php exit;?>11-17 08:21:07 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\zsask\index.php | 97
+<?php exit;?>11-17 08:21:07 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\zsask\index.php | 98
+<?php exit;?>11-17 10:21:39 | 2 | extract() expects parameter 1 to be array, string given | phpcms\modules\poster\space.php | 165

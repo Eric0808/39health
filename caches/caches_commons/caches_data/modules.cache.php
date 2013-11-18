@@ -632,5 +632,19 @@ return array (
     'installdate' => '2013-11-03',
     'updatedate' => '2013-11-03',
   ),
+  'invite' => 
+  array (
+    'module' => 'invite',
+    'name' => '会员邀请',
+    'url' => 'invite/',
+    'iscore' => '0',
+    'version' => '1.0',
+    'description' => '会员邀请',
+    'setting' => '',
+    'listorder' => '0',
+    'disabled' => '0',
+    'installdate' => '2013-11-17',
+    'updatedate' => '2013-11-17',
+  ),
 );
 ?>
