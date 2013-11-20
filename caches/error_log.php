@@ -132,3 +132,6 @@
 <?php exit;?>11-17 08:21:07 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\zsask\index.php | 97
 <?php exit;?>11-17 08:21:07 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\zsask\index.php | 98
 <?php exit;?>11-17 10:21:39 | 2 | extract() expects parameter 1 to be array, string given | phpcms\modules\poster\space.php | 165
+<?php exit;?>11-20 01:17:45 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 231
+<?php exit;?>11-20 01:17:47 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 231
+<?php exit;?>11-20 02:26:05 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
