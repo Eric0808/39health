@@ -38,7 +38,7 @@ CREATE TABLE `v9_admin` (
 
 /*Data for the table `v9_admin` */
 
-insert  into `v9_admin`(`userid`,`username`,`password`,`roleid`,`encrypt`,`lastloginip`,`lastlogintime`,`email`,`realname`,`card`,`lang`) values (1,'admin','36ff993452501fef7039a0da01d887ef',1,'YSCdwj','127.0.0.1',1384354111,'120592361@qq.com','','','');
+insert  into `v9_admin`(`userid`,`username`,`password`,`roleid`,`encrypt`,`lastloginip`,`lastlogintime`,`email`,`realname`,`card`,`lang`) values (1,'admin','36ff993452501fef7039a0da01d887ef',1,'YSCdwj','127.0.0.1',1384880293,'120592361@qq.com','','','');
 
 /*Table structure for table `v9_admin_panel` */
 
@@ -948,6 +948,22 @@ CREATE TABLE `v9_house_data` (
 
 /*Data for the table `v9_house_data` */
 
+/*Table structure for table `v9_invite_log` */
+
+DROP TABLE IF EXISTS `v9_invite_log`;
+
+CREATE TABLE `v9_invite_log` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `invite_uid` mediumint(8) NOT NULL,
+  `from_uid` mediumint(8) NOT NULL,
+  `time` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `invite_uid` (`invite_uid`),
+  KEY `from_uid` (`from_uid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/*Data for the table `v9_invite_log` */
+
 /*Table structure for table `v9_ipbanned` */
 
 DROP TABLE IF EXISTS `v9_ipbanned`;
@@ -1118,7 +1134,7 @@ CREATE TABLE `v9_member` (
 
 /*Data for the table `v9_member` */
 
-insert  into `v9_member`(`userid`,`phpssouid`,`username`,`password`,`encrypt`,`nickname`,`regdate`,`lastdate`,`regip`,`lastip`,`loginnum`,`email`,`groupid`,`areaid`,`amount`,`point`,`modelid`,`message`,`islock`,`vip`,`overduedate`,`siteid`,`connectid`,`from`,`mobile`) values (1,1,'lcc','7b5dc3577ec8710437f51b7405824f64','LQaIgV','lcc',1380468122,1380468122,'127.0.0.1','',0,'120592361@qq.com',2,0,'0.00',0,10,0,0,0,0,1,'','',''),(2,2,'lucongcong','994e03fa0653f7b5785658053c23da61','VzNvFl','lccd',1381334118,1381408014,'127.0.0.1','127.0.0.1',0,'12059236@qq.com',2,0,'0.00',0,10,0,0,0,0,1,'','',''),(3,3,'chenyao','817251beeffdf4056dcd48c92f67dae1','lkjh5c','yaoyao',1381407899,1383751476,'127.0.0.1','127.0.0.1',0,'sfsf@qq.com',5,0,'9400.00',2000,10,0,0,0,0,1,'','',''),(4,4,'青春无悔','b764506477e66ef93266e11996c2e57f','RXFTxj','青春无悔',1383488036,1383488036,'127.0.0.1','',0,'a5a4d397@denglu.com',2,0,'0.00',0,10,0,0,0,0,1,'','',''),(5,5,'青春无悔d','6914212d8343a076bc9836dea0961c93','Kyy3iz','青春无悔',1383488198,1383488198,'127.0.0.1','',0,'775ad2f5@denglu.com',2,0,'0.00',0,10,0,0,0,0,1,'','','');
+insert  into `v9_member`(`userid`,`phpssouid`,`username`,`password`,`encrypt`,`nickname`,`regdate`,`lastdate`,`regip`,`lastip`,`loginnum`,`email`,`groupid`,`areaid`,`amount`,`point`,`modelid`,`message`,`islock`,`vip`,`overduedate`,`siteid`,`connectid`,`from`,`mobile`) values (1,1,'lcc','7b5dc3577ec8710437f51b7405824f64','LQaIgV','lcc',1380468122,1380468122,'127.0.0.1','',0,'120592361@qq.com',2,0,'0.00',0,10,0,0,0,0,1,'','',''),(2,2,'lucongcong','994e03fa0653f7b5785658053c23da61','VzNvFl','lccd',1381334118,1381408014,'127.0.0.1','127.0.0.1',0,'12059236@qq.com',2,0,'0.00',0,10,0,0,0,0,1,'','',''),(3,3,'chenyao','817251beeffdf4056dcd48c92f67dae1','lkjh5c','yaoyao',1381407899,1384881592,'127.0.0.1','127.0.0.1',0,'sfsf@qq.com',5,0,'9400.00',2000,10,0,0,0,0,1,'','',''),(4,4,'青春无悔','b764506477e66ef93266e11996c2e57f','RXFTxj','青春无悔',1383488036,1383488036,'127.0.0.1','',0,'a5a4d397@denglu.com',2,0,'0.00',0,10,0,0,0,0,1,'','',''),(5,5,'青春无悔d','6914212d8343a076bc9836dea0961c93','Kyy3iz','青春无悔',1383488198,1383488198,'127.0.0.1','',0,'775ad2f5@denglu.com',2,0,'0.00',0,10,0,0,0,0,1,'','','');
 
 /*Table structure for table `v9_member_address` */
 
@@ -2020,6 +2036,8 @@ CREATE TABLE `v9_session` (
 
 /*Data for the table `v9_session` */
 
+insert  into `v9_session`(`sessionid`,`userid`,`ip`,`lastvisit`,`roleid`,`groupid`,`m`,`c`,`a`,`data`) values ('hkntm2n4ddcq534c93v71msvm1',1,'127.0.0.1',1384885577,1,0,'admin','index','public_session_life','code|s:5:\"ddyds\";userid|s:1:\"1\";roleid|s:1:\"1\";pc_hash|s:6:\"AYrgEI\";lock_screen|i:0;');
+
 /*Table structure for table `v9_site` */
 
 DROP TABLE IF EXISTS `v9_site`;
@@ -2229,7 +2247,7 @@ CREATE TABLE `v9_sso_members` (
 
 /*Data for the table `v9_sso_members` */
 
-insert  into `v9_sso_members`(`uid`,`username`,`password`,`random`,`email`,`regip`,`regdate`,`lastip`,`lastdate`,`appname`,`type`,`avatar`,`ucuserid`) values (1,'lcc','7b5dc3577ec8710437f51b7405824f64','LQaIgV','120592361@qq.com','127.0.0.1',1380468122,'0',1380468122,'phpcms v9','app',0,0),(2,'lucongcong','994e03fa0653f7b5785658053c23da61','VzNvFl','12059236@qq.com','127.0.0.1',1381334118,'127.0.0.1',1381408014,'phpcms v9','app',0,0),(3,'chenyao','817251beeffdf4056dcd48c92f67dae1','lkjh5c','sfsf@qq.com','127.0.0.1',1381407899,'127.0.0.1',1383751477,'phpcms v9','app',0,0),(4,'青春无悔','b764506477e66ef93266e11996c2e57f','RXFTxj','a5a4d397@denglu.com','127.0.0.1',1383488036,'0',1383488036,'phpcms v9','app',0,0),(5,'青春无悔d','6914212d8343a076bc9836dea0961c93','Kyy3iz','775ad2f5@denglu.com','127.0.0.1',1383488198,'0',1383488198,'phpcms v9','app',0,0);
+insert  into `v9_sso_members`(`uid`,`username`,`password`,`random`,`email`,`regip`,`regdate`,`lastip`,`lastdate`,`appname`,`type`,`avatar`,`ucuserid`) values (1,'lcc','7b5dc3577ec8710437f51b7405824f64','LQaIgV','120592361@qq.com','127.0.0.1',1380468122,'0',1380468122,'phpcms v9','app',0,0),(2,'lucongcong','994e03fa0653f7b5785658053c23da61','VzNvFl','12059236@qq.com','127.0.0.1',1381334118,'127.0.0.1',1381408014,'phpcms v9','app',0,0),(3,'chenyao','817251beeffdf4056dcd48c92f67dae1','lkjh5c','sfsf@qq.com','127.0.0.1',1381407899,'127.0.0.1',1384881592,'phpcms v9','app',0,0),(4,'青春无悔','b764506477e66ef93266e11996c2e57f','RXFTxj','a5a4d397@denglu.com','127.0.0.1',1383488036,'0',1383488036,'phpcms v9','app',0,0),(5,'青春无悔d','6914212d8343a076bc9836dea0961c93','Kyy3iz','775ad2f5@denglu.com','127.0.0.1',1383488198,'0',1383488198,'phpcms v9','app',0,0);
 
 /*Table structure for table `v9_sso_messagequeue` */
 
