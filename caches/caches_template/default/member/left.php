@@ -11,7 +11,8 @@
                 <li<?php if(ROUTE_A!="pay" && ROUTE_C=="deposit") { ?> class="on"<?php } ?>><a href="index.php?m=pay&c=deposit&a=init"><img src="<?php echo IMG_PATH;?>icon/m_8.png" width="16" height="16" /> <?php echo L('pay_log');?></a></li>
                 <li<?php if(ROUTE_A!="pay" && ROUTE_C=="spend_list") { ?> class="on"<?php } ?>><a href="index.php?m=pay&c=spend_list&a=init"><img src="<?php echo IMG_PATH;?>icon/table-information.png" width="16" height="16" /> <?php echo L('cost_log');?></a></li>
 				<li<?php if(ROUTE_A=="change_credit") { ?> class="on"<?php } ?>><a href="index.php?m=member&c=index&a=change_credit"><img src="<?php echo IMG_PATH;?>icon/coins_add.png" width="16" height="16" /> <?php echo L('credit_change');?></a></li>
-      </ul>
+				<li<?php if(ROUTE_A=="withdraw_cash" && ROUTE_C=="deposit") { ?> class="on"<?php } ?>><a href="index.php?m=pay&c=deposit&a=withdraw_cash"><img src="<?php echo IMG_PATH;?>icon/coins_add.png" width="15" height="16" /> 提现申请</a></li>
+	  </ul>
       <?php } ?>
 <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"message\" data=\"op=message&tag_md5=6148979e8152595f69c4eb2d2a5ebab7&action=check_new\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$message_tag = pc_base::load_app_class("message_tag", "message");if (method_exists($message_tag, 'check_new')) {$data = $message_tag->check_new(array('limit'=>'20',));}?>
 <?php $new_arr = $data;?>

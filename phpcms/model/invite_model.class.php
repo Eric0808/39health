@@ -30,7 +30,7 @@ class invite_model extends model {
 	public function get_uer_invite($uid)
 	{
 		$this->table_name = $this->db_tablepre.'invite_log';
-		$info = $this->db->select('*',"`invite_uid`={$uid}",'','order by time dese','','id');
+		$info = $this->db->select('*',$this->table_name,"`invite_uid`={$uid}",'','time desc','','id');
 		if(!$info){
 			return false;
 		}
@@ -40,7 +40,7 @@ class invite_model extends model {
 	public function get_all_invite()
 	{
 		$this->table_name = $this->db_tablepre.'invite_log';
-		$info = $this->db->select('*',"",'','order by time dese','','id');
+		$info = $this->db->select('*',$this->table_name,'','order by time dese','','id');
 		if(!$info){
 			return false;
 		}

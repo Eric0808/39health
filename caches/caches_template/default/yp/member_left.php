@@ -2,7 +2,7 @@
             <?php if(module_exists('pay')) { ?>
 <h6 class="title"> 收货管理</h6>
             <ul class="left-info">
-                <li<?php if(ROUTE_A=="company" && ROUTE_C=="business") { ?> class="on"<?php } ?>><a href="index.php?m=yp&c=business&a=company&t=3" hidefocus="true">收货地址</a></li>
+                <li<?php if(ROUTE_A=="member_address" && ROUTE_C=="business") { ?> class="on"<?php } ?>><a href="index.php?m=yp&c=business&a=member_address&t=3" hidefocus="true">收货地址</a></li>
       </ul>
       <?php } ?>
       <h6 class="title">我的订单</h6>

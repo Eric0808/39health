@@ -11,10 +11,11 @@ pc_base::load_sys_class('form', '', 0);
 class index extends foreground {
 
 	private $times_db;
-	
+	public $invite_setting;
 	function __construct() {
 		parent::__construct();
 		$this->http_user_agent = $_SERVER['HTTP_USER_AGENT'];
+		
 	}
 
 	public function init() {
@@ -152,6 +153,20 @@ class index extends foreground {
 					}
 					
 					if($userid > 0) {
+					
+						//增加邀请记录begin
+						$invite_model = pc_base::load_model('invite_model');
+						pc_base::load_app_func('global');
+						$invite_code = param::get_cookie('invite_code');
+						if($invite_code){
+							$invite_uid = invite_code($invite_code,true);
+							$uinfo = $this->db->get_one(array('userid'=>$invite_uid));
+							if($uinfo && $invite_uid!==$userid){
+								$invite_model->add_invite($invite_uid,$userid);
+							}
+						}
+						//增加邀请记录end
+						
 						//执行登陆操作
 						if(!$cookietime) $get_cookietime = param::get_cookie('cookietime');
 						$_cookietime = $cookietime ? intval($cookietime) : ($get_cookietime ? $get_cookietime : 0);
@@ -373,6 +388,8 @@ class index extends foreground {
 				$member_modelinfo[$v['name']] = $member_modelinfo_arr[$k];
 			}
 		}
+		
+		
 
 		include template('member', 'account_manage');
 	}

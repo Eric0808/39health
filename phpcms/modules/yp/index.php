@@ -259,8 +259,10 @@ class index {
 		$buycar_db = pc_base::load_model('buycar_model');
 		$products = $buycar_db->select(array('userid'=>$userid, 'status'=>0));
 		$member_db = pc_base::load_model('member_model');
-		$memberinfo = $member_db->get_one(array('userid'=>$userid), 'amount');
-		$amounts = $memberinfo['amount'];
+		//$memberinfo = $member_db->get_one(array('userid'=>$userid), 'amount');
+		//$amounts = $memberinfo['amount'];
+		$memberinfo = $member_db->get_one(array('userid'=>$userid), 'point');
+		$amounts = $memberinfo['point'];
 		//seo
 		$siteid = get_siteid();
 		$SEO = seo($siteid, '', L('order_information'));
@@ -295,7 +297,7 @@ class index {
 							'username'    => $username,
 							'uid'		  => $r['uid'],
 							'buycarid'	  => $buycarid,
-							'money'       => trim(floatval($r['price']))*intval($r['quantity']),
+							'money'       => trim(intval($r['price']))*intval($r['quantity']),//trim(floatval($r['price']))*intval($r['quantity']),
 							'quantity'    => intval($r['quantity']),
 							'telephone'   => $buyerinfo['telephone'] ? trim($buyerinfo['telephone']) : trim($buyerinfo['mobile']),
 							'contactname' => $r['title'],
@@ -309,9 +311,11 @@ class index {
 					$orders[$r['uid']]['buycarid'] .= ','.$r['id'];
 					$orders[$r['uid']]['quantity'] += intval($r['quantity']);
 					$orders[$r['uid']]['contactname'] .= '、'.$r['title'];
-					$orders[$r['uid']]['money'] += trim(floatval($r['price']))*intval($r['quantity']);
+					//$orders[$r['uid']]['money'] += trim(floatval($r['price']))*intval($r['quantity']);
+					$orders[$r['uid']]['money'] += trim(intval($r['price']))*intval($r['quantity']);
 				}
-				$total_fee += trim(floatval($r['price']))*intval($r['quantity']); //计算总费用
+				//$total_fee += trim(floatval($r['price']))*intval($r['quantity']); //计算总费用
+				$total_fee += trim(intval($r['price']))*intval($r['quantity']); //计算总费用
 				$comment_arr[] = array('userid'=>$userid, 'module'=>'yp', 'modelid'=>$r['modelid'], 'contentid'=>$r['productid'], 'uid'=>$r['uid'], 'addtime'=>SYS_TIME);
 			}
 			$o = pc_base::load_app_class('order');
@@ -319,21 +323,25 @@ class index {
 			pc_base::load_app_class('spend','pay',0);
 			$member_db = pc_base::load_model('member_model'); //加载会员数据模型
 			//判断买家账户余额是否足够
-			$buyerinfo = $member_db->get_one(array('userid'=>$userid), 'amount');
-			if (floatval($total_fee)>floatval($buyerinfo['amount'])) showmessage(L('account_balance_less_than'), APP_PATH.'index.php?m=pay&c=deposit&a=pay');
+			//$buyerinfo = $member_db->get_one(array('userid'=>$userid), 'amount');
+			$buyerinfo = $member_db->get_one(array('userid'=>$userid), 'point');
+			//if (floatval($total_fee)>floatval($buyerinfo['amount'])) showmessage(L('account_balance_less_than'), APP_PATH.'index.php?m=pay&c=deposit&a=pay');
+			if (intval($total_fee)>intval($buyerinfo['point'])) showmessage(L('account_balance_less_than'), APP_PATH.'index.php?m=pay&c=deposit&a=pay');
 			$yp_company_db = pc_base::load_model('yp_company_model'); //加载企业库数据模型
 			$comment_relation_db = pc_base::load_model('comment_relation_model'); //加载点评关系表
 			foreach ($orders as $order) {
 				$o->add_record($order);
 				//减去购买者的账户中购买商品的金额
-				if (spend::amount($order['money'],$order['contactname'],$order['userid'], $order['username'], '',L('system_automation'))) {
+				//if (spend::amount($order['money'],$order['contactname'],$order['userid'], $order['username'], '',L('system_automation'))) {
+				if (spend::point($order['money'],$order['contactname'],$order['userid'], $order['username'], '',L('system_automation'))) {
 					//给商家自动添加商品的金额
 					$m = $member_db->get_one(array('userid'=>$order['uid']), 'username');
-					receipts::amount($order['money'],$order['uid'], $m['username'], $order['order_sn'],'selfincome',$order['contactname'],L('system_automation'), 'succ',$order['usernote']);
+					//receipts::amount($order['money'],$order['uid'], $m['username'], $order['order_sn'],'selfincome',$order['contactname'],L('system_automation'), 'succ',$order['usernote']);
+					receipts::point($order['money'],$order['uid'], $m['username'], $order['order_sn'],'selfincome',$order['contactname'],L('system_automation'), 'succ',$order['usernote']);
 					//标记购物车该项记录已被结算
 					$buycar_db->update(array('status'=>1), '`id` IN('.$order['buycarid'].')');
 					//购买完成给商铺加的积分
-					$yp_company_db->update(array('points'=>'+='.$order['quantity']), array('userid'=>$order['uid']));
+					//$yp_company_db->update(array('points'=>'+='.$order['quantity']), array('userid'=>$order['uid']));
 				} else {
 					$error_pay = true;
 					$error_uid[] = $order['uid'];
@@ -348,7 +356,7 @@ class index {
 			if ($error_pay) {
 				showmessage(L('some_goods_paid'), APP_PATH.'index.php?m=yp&c=index&a=buycar_list');
 			} else {
-				showmessage(L('payment_success'), APP_PATH.'index.php?m=yp');
+				showmessage(L('payment_success'), APP_PATH.'index.php?m=yp&c=business&a=pay&t=4');
 			}
 		}
  	}

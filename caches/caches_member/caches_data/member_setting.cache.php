@@ -1,8 +1,11 @@
 <?php
 return array (
   'allowregister' => '1',
-  'choosemodel' => '1',
+  'choosemodel' => '0',
   'enablemailcheck' => '0',
+  'enablcodecheck' => '0',
+  'mobile_checktype' => '0',
+  'user_sendsms_title' => '',
   'registerverify' => '0',
   'showapppoint' => '0',
   'rmb_point_rate' => '10',

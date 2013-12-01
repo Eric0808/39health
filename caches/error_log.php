@@ -135,3 +135,27 @@
 <?php exit;?>11-20 01:17:45 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 231
 <?php exit;?>11-20 01:17:47 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 231
 <?php exit;?>11-20 02:26:05 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-30 11:11:24 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 231
+<?php exit;?>11-30 11:11:25 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 231
+<?php exit;?>11-30 11:32:54 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 245
+<?php exit;?>11-30 11:32:55 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 245
+<?php exit;?>11-30 11:32:57 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 245
+<?php exit;?>11-30 11:32:58 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 245
+<?php exit;?>11-30 11:33:15 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 245
+<?php exit;?>11-30 11:33:15 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 245
+<?php exit;?>11-30 11:43:01 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 245
+<?php exit;?>11-30 11:43:01 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 245
+<?php exit;?>11-30 18:21:39 | 2048 | Redefining already defined constructor for class denglu_api | phpcms\modules\denglu\classes\denglu_api.class.php | 125
+<?php exit;?>11-30 20:01:40 | 2048 | Non-static method invite_log::invite_reward() should not be called statically | phpcms\modules\pay\classes\spend.class.php | 141
+<?php exit;?>12-01 12:59:49 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 102
+<?php exit;?>12-01 12:59:55 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 102
+<?php exit;?>12-01 13:01:41 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 102
+<?php exit;?>12-01 13:01:55 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 102
+<?php exit;?>12-01 13:01:57 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 102
+<?php exit;?>12-01 13:17:20 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 103
+<?php exit;?>12-01 13:17:24 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 103
+<?php exit;?>12-01 13:18:04 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 103
+<?php exit;?>12-01 13:18:15 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 103
+<?php exit;?>12-01 13:18:17 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 103
+<?php exit;?>12-01 13:19:09 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 104
+<?php exit;?>12-01 13:19:11 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 104

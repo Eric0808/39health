@@ -8,13 +8,11 @@
 <div class="content">
 <div class="point" id='exchange'>
         	<a href="javascript:hide_element('exchange');" hidefocus="true" class="close"><span>关闭</span></a>
-            <div class="content"><BR><p>1、请及时处理未发货的订单</p>
-			<p>2、配送信息不完整的，请及时与客户联系或者通过管理员取得信息。以免信誉受损</p>
-            <p>3、请注意填写邮递编号，以备查询</p>
+            <div class="content"><BR><p>1、请仔细核对订单信息</p>
+			<p>2、配送信息不完整的，请及时管理员取得信息。</p>
             </div>
             <span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
         </div>
-<form name="myform" action="{APP_PATH}index.php?m=yp&c=business&a=check_pay&id={$id}" method="post" id="myform">
 <table width="100%" cellspacing="0" class="table_form">
     <tr>
        <th width="80">订单号：</th>        
@@ -61,24 +59,10 @@
      </tr>
      <tr>
        <th>邮递单号：</th>
-       <td><input name="info[postal]" type="text" id="postal" size="30" value='{$info['postal']}' class="input-text"/> </td>
+       <td>{$info['postal']}</td>
      </tr>
-	 <tr>
-       <th>信息提醒：</th>
-       <td><input type="radio" name='info[tip]' value="1" checked> 短消息 <input type="radio" name='info[tip]' value="2"> 邮件</td>
-     </tr>
-     <tr>
-       <th> </th>
-       <td><input type="radio" name='info[status]' value="1"{if $info['status']} checked{/if}> 确认发货</td>
-     </tr>
-     <tr>
-       <td></td>
-       <td colspan="2"><label>
-         {if !$info['status']}<input type="submit" name="dosubmit" id="dosubmit" value="确 定" class="button"/>{/if}
-         </label></td>
-     </tr>
+	 
    </table>
-   </form>
    </div>
    <span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
    </div>

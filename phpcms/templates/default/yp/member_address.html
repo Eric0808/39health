@@ -1,14 +1,12 @@
-{template 'yp', 'header'}
+{template 'yp', 'member_header'}
 <link href="{CSS_PATH}table_form.css" rel="stylesheet" type="text/css" />
-<!--main-->
-<div class="main clear">
-	<div class="crumbs" style="margin-bottom:0"><a href="{APP_PATH}">首页</a><span> &gt; </span><a href="{get_yp_url()}">企业黄页</a> &gt; <a href="{get_yp_url('model', $this->setting_models[73])}">产品</a> &gt; 我的购物车</div>
-    <div class="bk10"></div>
-  <div class="shopping-order">
-    	<div class="order-1"></div><div class="order-2 on"></div><div class="order-3"></div>
-    </div>
-<div class="ver-form">
-    <h3>收货人信息 <a href="javascript:void(0);" id="navigation_info" class="f12 fn blue"{if !$address['truename']} style="display:none"{/if}>(修改)</a></h3>
+<div id="memberArea">
+	{template 'yp', 'member_left'}
+<div class="col-auto">
+<div class="col-1 ">
+<div class="tab-but cu-span"></div>
+<div class="content">
+<h3>收货人信息 <a href="javascript:void(0);" id="navigation_info" class="f12 fn blue"{if !$address['truename']} style="display:none"{/if}>(修改)</a></h3>
     <table width="100%" border="0" id="show_info"{if !$address['truename']} style="display:none"{/if} class="table_form">
       <tr>
         <th width="100">收货人姓名：</th>
@@ -69,54 +67,12 @@
         <td><input type="submit" class="button" onclick="ChangeInfo();" value="保存信息" /> <span style="color:#f00">收货信息修改后，请注意保存！</span></td>
       </tr>
     </table>
-	<form id="myform" method="POST" action="{APP_PATH}index.php?m=yp&c=index&a=pay" name="myform" >
-	<h3>订单备注 <a href="javascript:void(0);" id="note_show" class="f12 fn blue">(展开)</a></h3> 
-	<table width="100%" border="0" class="table_form">
-	  <tr>
-        <th width="100"> </th>
-        <td id="usernote" style="display:none;"><textarea rows="5" style='width:300px' name="usernote"></textarea> 限120字以内</td>
-      </tr>
-	</table>
-    <h3><span class="fn f12 rt"><a href="{APP_PATH}index.php?m=yp&c=index&a=buycar_list">返回修改购物车</a></span>商品清单</h3> 
-    <table width="99%" class="shopping-table" border="0">
-    <thead>
-      <tr>
-        <td width="120">商品编号</td>
-        <td>商品名称</td>
-        <td width="126">价格</td>
-        <td width="80">商品数量</td>
-      </tr>
-    </thead>
-    <tbody>
-	{php $total_fee = 0;}
-	{loop $products $p}
-	{php $total_fee += $p['price']*$p['quantity']}
-      <tr>
-        <td class="text-c">PN{str_pad($p['id'], 5, 0, STR_PAD_LEFT)}</td>
-        <td style="padding:2px 0 2px 5px; text-align:left;vertical-align:middle;" ><a target='_blank' href='{$p['url']}' >{$p['title']}</a></td>
-        <td style="color:#FF0000;font-weight:bold;font-family:verdana;text-align:center;">{intval($p['price'])}点</td>
-        <td class="text-c">{$p['quantity']}</td>
-      </tr>
-	  {/loop}
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="6">
-			<p>您账户余额：<span style="color:#FF0000;font-weight:bold;font-family:verdana;">{$amounts}点</span>{if $total_fee>$amounts}。余额不足，<a href="{APP_PATH}index.php?m=pay&c=deposit&a=pay" style="color:#FF0000;" target="_blank">请充值</a> <input type="button" value="充值完成" onclick="javascript:location.reload();" class="button">{/if}</p>
-            <p class="f14"><strong>商品总价格：</strong><span class="font-fixh f18">{$total_fee} 点</span></p>
-        </td>
-      </tr>
-  	</tfoot>
-</table>
-<div class="bk10"></div>
+</div>
+<span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
 </div>
 
-	<div class="shopping-btn" style="text-align:center">
-    	<input type="{if $total_fee>$amounts}button{else}submit{/if}" class="set-btms{if $total_fee>$amounts} off{/if}" value=" " />
-    </div>
-	</form>
 </div>
-<input type="hidden" id="checkinfo" value="0">
+</div>
 <script type="text/javascript">
 	function ChangeInfo() {
 		var name = $('#truename').val();
@@ -201,34 +157,5 @@
 			$('#show_form').show();
 		}
 	});
-
-	$('#myform').submit(function() {
-		total_fee = parseFloat(total_fee);
-		var amount = {$amounts};
-		var bool = false;
-		$.ajax({url:"{APP_PATH}index.php?m=yp&c=index&a=get_member_address&random="+Math.random(),type:"get",async:false,success:function(data){
-			if(data!='1') {
-				alert('请填写收货地址！');
-			} else {
-				bool = true;
-			}
-		}
-		});
-		if (bool && total_fee>amount) {
-			alert('您账户余额不足，请先充值！');
-			window.open('{APP_PATH}index.php?m=pay&c=deposit&a=pay');
-		}
-		return bool;
-	});
-
-	$('#note_show').click(function() {
-		if ($('#usernote').css('display')=='none') {
-			$('#usernote').show();
-			$('#note_show').html('(关闭)');
-		} else {
-			$('#usernote').hide();
-			$('#note_show').html('(展开)');
-		}
-	}); 
-</script>
-{template 'yp', 'footer'}
+	</script>
+{template 'member', 'footer'}

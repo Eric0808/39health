@@ -136,6 +136,10 @@ class spend {
 			$sql = array('amount'=>"-=".$data['value']);
 		} elseif ($data['type'] == 2) { //积分方式消费
 			$sql = array('point'=>'-='.$data['value']);
+			//会员邀请积分奖励
+			pc_base::load_app_class('invite_log','invite',0);
+			invite_log::invite_reward($data['userid'],$data['value']);
+
 		} else {
 			self::$msg = 7;
 			return false;

@@ -89,6 +89,71 @@ class deposit extends foreground {
 		$show_validator = 1;
 		include template('pay', 'deposit');
 	}
+
+	/*积分提现*/
+	public function withdraw_cash() {
+		$userid = param::get_cookie('_userid');
+		$nickname = param::get_cookie('_nickname');
+		if (!$userid) showmessage(L('login_website'), APP_PATH.'index.php?m=member&c=index&a=login&forward='.urlencode($_SERVER["REQUEST_URI"]));
+		$memberinfo = $this->memberinfo;
+		$module_db = pc_base::load_model('module_model');
+		$setting = $module_db->get_one(array('module'=>'member'), 'setting');
+		$member_setting = string2array($setting['setting']); 
+		$point_to_money = floatval(intval($memberinfo['point'])/intval($member_setting['rmb_point_rate'])) ;
+		$max_withdraw = number_format(($memberinfo['amount']+$point_to_money),2,'.','');
+		if(isset($_POST['dosubmit'])) {
+
+			$code = isset($_POST['code']) && trim($_POST['code']) ? trim($_POST['code']) : showmessage(L('input_code'), HTTP_REFERER);
+			if ($_SESSION['code'] != strtolower($code)) {
+					showmessage(L('code_error'), HTTP_REFERER);
+			}
+			$money = floatval($_POST['info']['price']);//提现金额
+			if($money>$max_withdraw)
+			{
+				showmessage('您的提现金额超过了最大可提现额度！', HTTP_REFERER);
+			}
+			$cut_amount = $cut_point = 0.00;
+			if($money <= $memberinfo['amount']){
+				$cut_amount = $money;
+			}else{
+				$cut_amount = $memberinfo['amount'];
+				$cut_point = intval($money-$memberinfo['amount']) * intval($member_setting['rmb_point_rate']);
+			}
+			$insert_data = array(
+				'uid' =>$userid,
+				'nickname'=>$nickname,
+				'truename'=>$_POST['info']['name'],
+				'cut_total'=>floatval($_POST['info']['price']),
+				'original_amount'=>$memberinfo['amount'],
+				'original_point'=>$memberinfo['point'],
+				'cut_amount'=>$cut_amount,
+				'cut_point'=>$cut_point,
+				'bank'=>$_POST['info']['bank'],
+				'account'=>trim($_POST['info']['account']),
+				'email'=>$_POST['info']['email'],
+				'telephone'=>$_POST['info']['telephone'],
+				'usernote'=>$_POST['info']['usernote'],
+				'status'=>0,//0:等待审核:2：处理中3.处理成功4：审核失败：5：处理失败1：处理成功
+				'addtime' =>time()
+				);
+			$with_draw_db = pc_base::load_model('with_draw_model');
+			$this->member_db = pc_base::load_model('member_model'); //加载会员数据模型
+			$status_one = $this->member_db->update(array('point'=>'-='.$cut_point), array('userid'=>$userid));
+			$status_two = $this->member_db->update(array('amount'=>'-='.$cut_amount), array('userid'=>$userid));
+			if($status_one && $status_two){
+				if($with_draw_db->insert($insert_data))
+					showmessage('提交申请已成功，请耐心等待审核！！', HTTP_REFERER);
+				else
+					showmessage('系统错误！', HTTP_REFERER);
+			}
+			
+
+		}else{
+			$show_validator = 1;
+			include template('pay', 'withdraw_cash');
+		}	
+		
+	}
 	
 	/*
 	 * 充值方式支付

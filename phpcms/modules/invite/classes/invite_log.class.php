@@ -15,113 +15,70 @@ class invite_log {
 	 * 构造函数
 	 */
 	public function __construct() {
-		$this->db = pc_base::load_model('invite_model');
+		
 	}
 
 	/**
-	 * 生成流水记录
+	 * 添加邀请记录
 	 * @param unknown_type
 	 */
-	public function add_record($data){
-		$require_items = array('userid','username','uid', 'buycarid', 'email','contactname','telephone','order_sn','money','quantity','addtime','usernote','ip');
-		if(is_array($data)) {
-			foreach($data as $key=>$item) {
-				if(in_array($key,$require_items)) $info[$key] = $item;
-			}
-		} else {
-			return false;
-		}
-		$order_exist = $this->db->get_one(array('order_sn'=>$info['order_sn']), 'id');
-		if($order_exist) return $order_exist['id'];
-		$this->db->insert($info);
-		return $this->db->insert_id();
+	public function add_invite($invite_uid,$from_uid){
+		$this->db = pc_base::load_model('invite_model');
+		return $this->db->add_invite($invite_uid,$from_uid);
 	}
 
 	/**
-	 * 获取流水记录
-	 * @param init $id 流水帐号
+	 * 获取用户的邀请记录
+	 * @param init $uid 用户ID
 	 */
-	public function get_record($id) {
-		$id = intval($id);
-		$result = array();
-		$result = $this->db->get_one(array('id'=>$id));
-		$status_arr = array('succ','failed','error','timeout','cancel');
-		return ($result && !in_array($result['status'],$status_arr)) ? $result: false;
+	public function get_uer_invite($uid) {
+		$this->db = pc_base::load_model('invite_model');
+		$uid = intval($uid);
+		return $this->db->get_uer_invite($uid);
 	}
 
 	/**
-	 * 获取订单信息
-	 * @param intval $userid 管理员ID
-	 * @param intval(0/1) $status 0表示未发货订单，1表示已发货订单，为空为全部订单
+	 * 获取所有的邀请记录
 	 */
-	public function admin_listinfo($userid, $status) {
-		$where = array('uid'=>$userid);
-		if (isset($status) && is_numeric($status)) {
-			$where['status'] = $status;
-		}
-		$page = max(intval($_GET['page']), 1);
-		$data = $this->db->listinfo($where, '`id` DESC', $page);
-		$this->pages = $this->db->pages;
-		return $data;
+	public function get_all_invite() {
+		$this->db = pc_base::load_model('invite_model');
+		return $this->db->get_all_invite();
 	}
-
+	
 	/**
-	 * 获取订单信息
+	 * 会员邀请积分奖励
 	 * @param intval $userid 用户ID
-	 * @param intval(0/1) $status 0表示未发货订单，1表示已发货订单，为空为全部订单
+	 * @param intval $point 被邀请会员本次消费的积分
 	 */
-	public function user_listinfo($userid, $status) {
-		$where = array('userid'=>$userid);
-		if (isset($status) && is_numeric($status)) {
-			$where['status'] = $status;
+	public static function invite_reward($userid,$point) {
+		//$invite_log_model = self::db;
+		$module_db = pc_base::load_model('module_model');
+		$setting = $module_db->get_one(array('module'=>'invite'), 'setting');
+		$setting = string2array($setting['setting']);
+		$proportion = $setting['proportion'];
+		$add_point = intval($point*($proportion/100));
+		$invite_log = self::_get_invite_uid($userid);
+		if($invite_log){
+
+			$member_db = pc_base::load_model('member_model'); //加载会员数据模型
+			$member_db->update(array('point'=>'+='.$add_point), array('userid'=>$invite_log['invite_uid']));
+			self::_get_invite_uid($invite_log['id'],'update',$add_point);
 		}
-		$page = max(intval($_GET['page']), 1);
-		$data = $this->db->listinfo($where, '`id` DESC', $page);
-		$this->pages = $this->db->pages;
-		return $data;
 	}
 
-	/**
-	 * 获取订单详情
-	 * @param intval $id 订单ID
-	 */
-	public function get($id) {
-		$result = $this->db->get_one(array('id'=>$id));
-		//取得商品信息
-		$buycar_db = pc_base::load_model('buycar_model');
-		$result['products'] = $buycar_db->select('`id` IN('.$result['buycarid'].') AND `status`=1', 'title, quantity, thumb, url, price');
-		//取得送货地址信息
-		$member_address = pc_base::load_model('member_address_model');
-		$result['address'] = $member_address->get_one(array('userid'=>$result['userid']));
- 		return $result;
+	private static function _get_invite_uid($id,$type='select',$point=0)
+	{
+		$invite_model = pc_base::load_model('invite_model');
+		$invite_model->table_name = $invite_model->db_tablepre.'invite_log';
+		//var_dump($invite_model);die;
+		if($type=='select'){
+			return $invite_model->get_one(array('from_uid'=>$id),'id,invite_uid');
+		}
+		if($type=='update'){
+			return $invite_model->update(array('points'=>'+='.$point), array('id'=>$id));
+		}
+		
 	}
 
-    /**
-	 * 修改订单
-	 * @param intval $id 订单ID
-     * @param array $data 数组
-	 */
-    public function update($id, $data) {
-		$where = array();
-		if ($data['postal']) {
-			$where['postal'] = new_addslashes($data['postal']);
-		}
-		if ($data['status']) {
-			$where['status'] = intval($data['status']);
-		}
-        $r = $this->db->get_one(array('id'=>$id), 'uid, username, contactname, status, email');
-        if ($r['status']==0 && $data['tip']) {
-        	$message = str_replace($r['username'], '', $r['contactname']);
-			$message .= L('you').$message.L('Shipped');
-        	if ($data['tip']==1) {
-		        $message_db = pc_base::load_model('message_model');
-				$message_db->add_message($r['username'],'SYSTEM',L('order_status_reminder'),$message);
-        	} else {
-        		pc_base::load_sys_func('mail');
-        		sendmail($r['email'], L('order_status_reminder'), $message);
-        	}
-        }
-		$this->db->update($where, array('id'=>$id));
-        return true;
-    }
+	
 }

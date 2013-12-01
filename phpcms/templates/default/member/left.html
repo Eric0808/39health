@@ -11,7 +11,8 @@
                 <li{if ROUTE_A!="pay" && ROUTE_C=="deposit"} class="on"{/if}><a href="index.php?m=pay&c=deposit&a=init"><img src="{IMG_PATH}icon/m_8.png" width="16" height="16" /> {L('pay_log')}</a></li>
                 <li{if ROUTE_A!="pay" && ROUTE_C=="spend_list"} class="on"{/if}><a href="index.php?m=pay&c=spend_list&a=init"><img src="{IMG_PATH}icon/table-information.png" width="16" height="16" /> {L('cost_log')}</a></li>
 				<li{if ROUTE_A=="change_credit"} class="on"{/if}><a href="index.php?m=member&c=index&a=change_credit"><img src="{IMG_PATH}icon/coins_add.png" width="16" height="16" /> {L('credit_change')}</a></li>
-      </ul>
+				<li{if ROUTE_A=="withdraw_cash" && ROUTE_C=="deposit"} class="on"{/if}><a href="index.php?m=pay&c=deposit&a=withdraw_cash"><img src="{IMG_PATH}icon/coins_add.png" width="15" height="16" /> 提现申请</a></li>
+	  </ul>
       {/if}
 {pc:message action="check_new"}
 {php $new_arr = $data;}
