@@ -159,3 +159,5 @@
 <?php exit;?>12-01 13:18:17 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 103
 <?php exit;?>12-01 13:19:09 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 104
 <?php exit;?>12-01 13:19:11 | 2 | Division by zero               | phpcms\modules\pay\deposit.php | 104
+<?php exit;?>12-03 00:02:17 | 2 | Invalid argument supplied for foreach() | phpcms\modules\pay\payment.php | 35
+<?php exit;?>12-03 08:33:28 | 2 | Missing argument 4 for structure_filters_url(), called in D:\www\39health\caches\caches_template\default\content\list_product.php on line 106 and defined | phpcms\libs\functions\autoload\info.func.php | 32
