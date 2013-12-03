@@ -507,4 +507,6 @@ $LANG['additional_listorder'] = '附加字段排序';
 
 $LANG['invite'] = '会员邀请';
 $LANG['invite_setting'] = '邀请设置';
+$LANG['base_setting'] = '邀请设置';
+$LANG['withdraw_list'] = '提现列表';
 ?>

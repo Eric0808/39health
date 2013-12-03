@@ -24,7 +24,7 @@ class index {
 	function init() {
 		/*$askcategorys = getcache('categorys', 'zsask');
 		
-		$SEO = seo(1,'','重庆装饰装修视频新闻-重庆家装网');
+		$SEO = seo(1,'','');
 		$page = max(intval($_GET['page']), 1);
 		include template('zsask', 'index');*/
 		$this->qlist();
@@ -36,14 +36,14 @@ class index {
 		
 		$catid = intval($_GET['cid']) ? intval($_GET['cid']) : 0;
 		
-		$SEO = seo(1,'','重庆装饰问答网-重庆家装网');
+		$SEO = seo(1,'','问答-风水网');
 		$page = max(intval($_GET['page']), 1);
 		include template('zsask', 'qlist');
 	}
 	
 	//提问
 	function question() {
-		$SEO = seo(1,'','重庆装饰问答网-重庆家装网');
+		$SEO = seo(1,'','问答-风水网');
 		if (isset($_POST['dosubmit']) || isset($_GET['dosubmit'])) {
 			
 			if (!$this->config['agree_question']) check_member($this->userid);//检查配置是否同意游客提问
@@ -104,7 +104,7 @@ class index {
 			}
 		}
 		
-		$SEO = seo(1,'', $info['question'].' - 重庆装饰问答网 - 重庆家装网');
+		$SEO = seo(1,'', $info['question'].' - 问答-风水网');
 		$page = max(intval($_GET['page']), 1);
 		include template('zsask', 'answer');
 	}
